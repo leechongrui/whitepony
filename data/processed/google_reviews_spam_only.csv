@@ -1,0 +1,176 @@
+business_name,author_name,text,photo,rating,rating_category,predicted_label
+Haci'nin Yeri - Yigit Lokantasi,Nadia Salim,Delicious food at rock bottom prices. Friendly staff; Highly recommend,dataset/taste/hacinin_yeri_nadia_salim.png,5,taste,spam
+Haci'nin Yeri - Yigit Lokantasi,Onur Celebi,The food was just like the ones my mother made. Prices were reasonable.,dataset/taste/hacinin_yeri_onur_celebi.png,5,taste,spam
+Pizza Fellas,Deniz Bilgin,I strongly recommend. If I come to the taste part; it was very enjoyable to eat with their special sauces. Also the whole pizza was huge.,dataset/outdoor_atmosphere/pizza_fellas_deniz_bilgin.png,5,outdoor_atmosphere,spam
+Cafe Inn,Eren Kesti,When I went; I waited for almost 20 minutes for the waiters to take care of me. The taste was not bad. The surrounding was beautiful.,dataset/outdoor_atmosphere/cafe_inn_eren_kesti.png,2,outdoor_atmosphere,spam
+Sakip Usta Gaziantep,Gamze Aciogli,It was very nice to be greeted with a smile when we first entered; we went with my wife; the services are very fast; the empty services are removed immediately; the washbasins were hygienic and clean; and I would recommend a very reasonable place.,dataset/taste/sakip_usta_gaziantep_gamze_aciogli.png,4,taste,spam
+Sakip Usta Gaziantep,Serap Keskin,Taste was amazing! Price was not high.,dataset/menu/sakip_usta_gaziantep_serap_keskin.png,4,menu,spam
+Sakip Usta Gaziantep,Huseyin Bulut,We were very satisfied. I strongly recommend trying it. Delicious appetizers come with the meals.,dataset/taste/sakip_usta_gaziantep_huseyin_bulut.png,5,taste,spam
+Sakip Usta Gaziantep,Merve Balci,The food tastes good. The atmosphere of the place was not very attractive.,dataset/outdoor_atmosphere/sakip_usta_gaziantep_merve_balci.png,3,outdoor_atmosphere,spam
+Sakip Usta Gaziantep,Ali Kaya,Ayran came when the meal was over; the food was very bitter.,dataset/indoor_atmosphere/sakip_usta_gaziantep_ali_kaya.png,5,indoor_atmosphere,spam
+Imam Cagdas,Yusuf Gur,We came because it is a very famous place. They had really delicious food.,dataset/menu/imam_cagdas_yusuf_gur.png,4,menu,spam
+Fethiye Dondurmacisi,Semanur Cetin,We visited with my friends. The lemon one was great!,dataset/taste/fethiye_dondurmacisi_semanur_cetin.png,4,taste,spam
+My Friends Burger,Mahzun Zara,They have really saturated menus. The prices are very good; and as a place with a very nice interior and exterior decor with sea views; I would definitely recommend it at the same time.,dataset/menu/my_friends_burger_mahzun_zara.png,5,menu,spam
+My Friends Burger,Gonul Bilir,I never liked the service very bad; when we brought the wrong burger and returned it; we had to wait that much longer. The potatoes were terrible; the only onion rings and mushrooms were beautiful. I will never go to this place again.,dataset/taste/my_friends_burger_gonul_bilir.png,1,taste,spam
+Mcdonalds Fethiye,Metmet Sahin,Every time I come to Fethiye; I stop by and fill my stomach with pleasure.,dataset/indoor_atmosphere/mcdonalds_fethiye_mehmet_sahin.png,4,indoor_atmosphere,spam
+Pukka Marmaris,Dogukan Mert,Delicious. However; prices are as high as Marmaris in general in 2021.,dataset/menu/pukka_marmaris_dogukan_mert.png,4,menu,spam
+Churchill Bistro,Sibel Sarihan,A pleasant place with a beach; delicious food,dataset/taste/churchill_bistro_sibel_sarihan.png,5,taste,spam
+Churchill Bistro,Ali Suca,Seaside; pleasant place; mediocre food; owners concerned.,dataset/outdoor_atmosphere/churchill_bistro_ali_suca.png,4,outdoor_atmosphere,spam
+Leman Kultur,Yilmaz Yilmaz,It was very nice that the food was delicious; the place was facing the beauty of Alanya Castle and especially all the staff were interested.,dataset/outdoor_atmosphere/leman_kultur_yilmaz_yilmaz.png,5,outdoor_atmosphere,spam
+Leman Kultur,Mesut Dursun,Food was tasteless. The waiters were not smiling at all.,dataset/taste/leman_kultur_mesut_dursun.png,3,taste,spam
+Tatbak,Mehmet Erbagci,A delicious doner.,dataset/outdoor_atmosphere/tatbak_mehmet_erbagci.png,4,outdoor_atmosphere,spam
+Tatbak,Gokay Baydemir,"Delicious doner. I went there with my friend, that was she's first. She liked too.",dataset/taste/tatbak_gokay_baydemir.png,5,taste,spam
+Tatbak,Leyla Ciftci,Delicious!,dataset/taste/tatbak_leyla_ciftci.png,4,taste,spam
+Tatbak,Baran İsci,It was one of the best doner I've ever eaten in my life. Thank you very much.,dataset/outdoor_atmosphere/tatbak_baran_isci.png,5,outdoor_atmosphere,spam
+Guzel Koy Cafe,Havva Temiz,The cafe was cheap enough; I ate with my family.,dataset/menu/guzel_koy_cafe_havva_temiz.png,5,menu,spam
+Guzel Koy Cafe,Onur Aktas,Clean business; I liked it.,dataset/taste/guzel_koy_cafe_onur_aktas.png,5,taste,spam
+Cemo Etliekmek,Ahmet Biricik,Employees are kind. Food is delicious,dataset/indoor_atmosphere/cemo_etliekmek_ahmet_biricik.png,5,indoor_atmosphere,spam
+Cemo Etliekmek,Selahattin Ciritci,One of my favorite places in Konya in terms of service; hygiene and taste.,dataset/outdoor_atmosphere/cemo_etliekmek_selahattin_ciritci.png,4,outdoor_atmosphere,spam
+Korelee,Birkan Turk,"Atmosphere of the restourant was amazing, I felt times that I in Korea",dataset/outdoor_atmosphere/korelee_birkan_turk.png,4,outdoor_atmosphere,spam
+Korelee,Kubra Sener,The products were delicious; the service was fast; the employees were smiling and interested. Bulgogi mildly spiced meat was delicious.,dataset/taste/korelee_kubra_sener.png,5,taste,spam
+Korelee,Gokce Orlu,I had been to a different Korean restaurant before; the ambiance there really made me feel like I was in Korea. I couldn't feel that feeling here.,dataset/indoor_atmosphere/korelee_gokce_orlu.png,2,indoor_atmosphere,spam
+Patso Burger,Simge Cakir,"It was very crowded, We wait while we're hungry!",dataset/indoor_atmosphere/patso_burger_sime_cakir.png,1,indoor_atmosphere,spam
+Vefa Bozacisi,Muhammed Duman,Vefa Bozacisi must be the most beautiful place that comes to mind when Boza is mentioned. The groceries are quite affordable.,dataset/outdoor_atmosphere/vefa_bozacisi_muhammed_duman.png,5,outdoor_atmosphere,spam
+Salacak,Nur Aydin,Ambiance was amazing!,dataset/indoor_atmosphere/salacak.nur_aydin.png,5,indoor_atmosphere,spam
+Nusr-et,Emrah Yildirim,I do not recommend the lamb cage at all. But skewered and tenderloin are great. My carrot slice isn't bad. The waiters are interested and polite; but there are difficulties in understanding the order. You would like it cooked well; it comes undercooked.,dataset/menu/nusr-et_emrah_yildirim.png,4,menu,spam
+Cici Tantuni,Mert Tanis,Tantuni was amazing. Thank you Cici Tantuni!,dataset/taste/cici_tantuni_mert_tanis.png,5,taste,spam
+Cici Tantuni,Veli Dedeoglu,I tried tantuni with yoghurt for the first time. The taste was perfect. I would recommend it to everyone. It reminds me of the taste of iskender.,dataset/taste/cici_tantuni_veli_dedeoglu.png,5,taste,spam
+Cici Tantuni,Sila Bakirci,Prices are like that.,dataset/menu/cici_tantuni_sila_bakirci.png,4,menu,spam
+Bunbun Kas,Burak Efendioglu,A fast food restaurant with very friendly staff. It didn't appeal to my taste at all. Undercooked dough and lint meat.,dataset/outdoor_atmosphere/bunbun_kas_burak_efendioglu.png,3,outdoor_atmosphere,spam
+Bunbun Kas,Metehan Kilic,Overall it wasn't bad. It was delicious and ice cold. Mohair meat was delicious. The fries were nice. However; the bread that gives the place its name is a disappointment.,dataset/taste/bunbun_kas_metehan_kilic.png,4,taste,spam
+Gulcimen Aspava,Berna Kilic,Even though it was overcrowded; our orders came very quickly. Except for the künefe; all the treats were delicious. The künefe tasted oily. I recommend you to go to a very clean and relevant place.,dataset/indoor_atmosphere/gulcimen_aspava_berna_kilic.png,5,indoor_atmosphere,spam
+Gulcimen Aspava,Ceren Acikgoz,There was no delay in meals. As soon as the soup was finished; the meal arrived. The meals are quite delicious.,dataset/menu/gulcimen_aspava_ceren_acikgoz.png,5,menu,spam
+Nazar Cafe,Serdar Sariguney,The best place to eat local food in Muğla. Master Fikret's food is excellent. You should definitely stop by here.,dataset/indoor_atmosphere/nazar_cafe_serdar_sariguney.png,5,indoor_atmosphere,spam
+Nazar Cafe,Berkay Tasdeviren,We went to eat dessert as a family and we were satisfied. It was a bit crowded.,dataset/outdoor_atmosphere/nazar_cafe_berkay_tasdeviren.png,4,outdoor_atmosphere,spam
+Nazar Cafe,Nalan Kavskli,It's cold and extremely bad; the price of the food is way above its quality; 46 liras for 6 meatballs; 30 minutes or more waiting time. I definitely don't recommend it.,dataset/taste/nazar_cafe_nalan_kavskli.png,1,taste,spam
+Nazar Cafe,Gokce Sosyal,Recommend.,dataset/indoor_atmosphere/nazar_cafe_gokce_sosyal.png,4,indoor_atmosphere,spam
+Alsancak Firin,Osman Koral,I like it a lot. Prices are reasonable. Many varieties of boyoz available.,dataset/outdoor_atmosphere/alsancak_firin_osman_koral.png,4,outdoor_atmosphere,spam
+Alsancak Firin,Emre Sener,The boyoz with mozzarella was legendary; the salt taste coming from the back really makes the boyoz delicious.,dataset/menu/alsancak_firin_emre_sener.png,5,menu,spam
+Sushico,Nilufer Karatas,It was the best SushiCo restaurant I've experienced. Sushi was perfect and delicious.,dataset/indoor_atmosphere/sushico_nilufer_karatas.png,5,indoor_atmosphere,spam
+Sushico,Noah Ksante,The food is fresh; delicious and the atmosphere is quality as always.,dataset/indoor_atmosphere/sushico_noah_ksante.png,5,indoor_atmosphere,spam
+Sushico,Fattuma Ramesy,It didn't suit my taste but my wife loved it. The place was beautiful.,dataset/taste/sushico_fattuma_ramesy.png,3,taste,spam
+Sardalye,Faruk Miri,Delicious!,dataset/indoor_atmosphere/sardalye_faruk_miri.png,5,indoor_atmosphere,spam
+Sardalye,Mert Kiziloz,Our back hurt while eating; the place was clean.,dataset/indoor_atmosphere/sardalye_mert_sardalye.png,2,indoor_atmosphere,spam
+Sardalye,Guney Gecer,I went to there with my girl friend; I liked fishes but she did not like because fishes are a little bit oily.,dataset/taste/sardalye_guney_gecer.png,4,taste,spam
+Kumrucu Omur,Ozgur Bilgili,Food came a little late but that was okay. Prices were as you can see in the photo. It wasn't a bad experience.,dataset/menu/kumrucu_omur_ozgur_bilgili.png,3,menu,spam
+Kumrucu Omur,Cigdem Kiziloren,I can recommend it to those who want to eat a delicious dove in a beautiful place. Kumru's price is 45₺.,dataset/indoor_atmosphere/kumrucu_omur_cigdem_kiziloren.png,4,indoor_atmosphere,spam
+Bogazkoy Restaurant,Kadir Yurtlu,Definitely the best soufflé I've had in a long time. I am satisfied; I recommend.,dataset/taste/bogazkoy_restaurant_kadir_yurtlu.png,5,taste,spam
+Nesh,Leyla Bayindir,Waffles were delicious and their tea was fresh. It wasn't insane for the price. I'm thinking of coming again.,dataset/indoor_atmosphere/nesh_leyla_bayindir.png,5,indoor_atmosphere,spam
+Flash,Hilal Kaya,It was the most delicious adana kebab I ate in Alanya. The prices were also normal. The only thing missing was the salad.,dataset/taste/flash_hilal_kaya.png,4,taste,spam
+Flash,Khaled Srin,Everything was great; definitely coming back when I'm in Alanya again.,dataset/taste/flash_khaled_srin.png,5,taste,spam
+Flash,Konstantin Osipov,We came here with my family. Staff was very friendly; responsive and professional. Our order was delivered very quickly. The restaurant serve Turkish cuisine. One of the best in Alanya. Recommended.,dataset/indoor_atmosphere/flash_konstantin_osipov.png,5,indoor_atmosphere,spam
+Metanet Lokantasi,Volkan Savas,I ate katmer here for the first time and I couldn't forget its taste and smell. It may be the most beautiful dessert in the world!!,dataset/taste/metanet_lokantasi_volkan_savas.png,5,taste,spam
+Metanet Lokantasi,Meral Dirgen,Lahmacun was terrible.,dataset/indoor_atmosphere/metanet_lokantasi_meral_dirgen.png,1,indoor_atmosphere,spam
+Metanet Lokantasi,Cagri Ural,I'm ending my vacation by leaving my favorite food here..,dataset/outdoor_atmosphere/metanet_lokantasi_cagri_ural.png,5,outdoor_atmosphere,spam
+Midpoint,Kadir Alkan,The food is delicious; the view is beautiful.,dataset/outdoor_atmosphere/midpoint_kadir_alkan.png,5,outdoor_atmosphere,spam
+Midpoint,Ceren Cakir,I went on the recommendation of my friend. Everything at breakfast was delicious. Only the butter had a peculiar smell.,dataset/taste/midpoint_ceren_cakir.png,5,taste,spam
+Pecko Firin Atakum,Meltem Bahcaci,When there are so many employees; orders are forgotten; tables are not looked at. The food is really delicious.,dataset/indoor_atmosphere/pecko_firin_atakum_meltem_bahcaci.png,2,indoor_atmosphere,spam
+Baruthane Pilavcisi,Orhan Keles,The most delicious rice I have ever eaten. The ambiance of the environment is terrific; its desserts were amazing too.,dataset/indoor_atmosphere/baruthane_pilavcisi_orhan_keles.png,5,indoor_atmosphere,spam
+Baruthane Pilavcisi,Burcu Sahin,Prices was high.,dataset/menu/baruthane_pilavcisi_burcu_sahin.png,3,menu,spam
+Baruthane Pilavcisi,Baris Kurt,It was nice experience; you have to try it.,dataset/menu/baruthane_pilavcisi_baris_kurt.png,5,menu,spam
+Medeniyetler Sofrasi,Serkan Simsek,Even though the service is terrible; they ask for a service fee of 144 TL; what a nonsense!,dataset/menu/medeniyetler_sofrasi_serkan_simsek.png,1,menu,spam
+Backyard,Guler Keskec,Although it was crowded; the ambiance and food of the place was nice. Thank you.,dataset/menu/backyard_guler_keskec.png,4,menu,spam
+Backyard,Ozge Onan,Smoked salmon salad was average. Colored eggs do not contribute to the taste. Salmon was too salty; fried potatoes were bland.,dataset/menu/backyard_ozge_onan.png,3,menu,spam
+Alavara,Sevgi Siner,It was the most delicious pasta I have ever eaten; thank you.,dataset/taste/alavara_sevgi_siner.png,5,taste,spam
+Zula,Serdar Candan,The delicious combination of truffle sauce and burger was legendary.,dataset/outdoor_atmosphere/zula_serdar_candan.png,5,outdoor_atmosphere,spam
+Kafros Pizzeria,Tugay Sari,Staff were quick but surly. the service was actually fast; i can't afford it. We ordered chicken and mushroom pizza; its taste was normal; the dough was very thin and it wasn't burnt; which was the only good thing. Coming to the wage issue; there were prices that did not match the prices of luxury restaurants.,dataset/menu/kafros_pizzeria_tugay_sari.png,2,menu,spam
+Kafros Pizzeria,Burak Bulutoglu,Amazing pizzas omg!,dataset/outdoor_atmosphere/kafros_pizzeria_burak_bulutoglu.png,5,outdoor_atmosphere,spam
+Kebabci Halil Usta,Sabri Donmez,Deserts was amazing; especially baklava! Liked it.,dataset/taste/kebabci_halil_usta_sabri_donmez.png,5,taste,spam
+Abidin Tantuni,Ugurcan Arbaz,It was too oily and the place had problems with cleanliness.,dataset/taste/abidin_tantuni_ugurcan_arbaz.png,2,taste,spam
+Abidin Tantuni,Meltem Ovali,we had a delicious tantuni experience. I was amazed by the taste of ayran; pickles and tantuni trio.,dataset/taste/abidin_tantuni_meltem_ovali.png,5,taste,spam
+Ahsap Iskender,Kemal Batursoy,Iskender kebab is not a meal worth that much money when I look at the price of 195 TL for 1 portion; rather than its taste.,dataset/menu/ahsap_iskender_kemal_batursoy.png,4,menu,spam
+Ahsap Iskender,Hacer Coskun,My order came cold.,dataset/menu/ahsap_iskender_hacer_coskun.png,4,menu,spam
+Ahsap Iskender,Kubra Unver,It was delicious as I heard.,dataset/outdoor_atmosphere/ahsap_iskender_kubra_unver.png,5,outdoor_atmosphere,spam
+Kasikla Restaurant,Sevim Turk,Recommend.,dataset/outdoor_atmosphere/kasikla_restaurant_sevim_turk.png,5,outdoor_atmosphere,spam
+Kasikla Restaurant,Betul Tomac,I tried Kayseri's traditional ravioli and special ravioli. The special was just right for my taste. I like. We also tried yaglama but it wasn't as good as I imagined. It was also cold.,dataset/outdoor_atmosphere/kasikla_restaurant_betul_tomac.png,3,outdoor_atmosphere,spam
+Pizzeria Remo,Alberto Tonnia,What an awesome place. The fried starters were lush; as were the rice balls. However; the pizza was amazing; the best I have tasted (in Rome).,dataset/outdoor_atmosphere/pizzeria_remo_alberto_tonnia.png,5,outdoor_atmosphere,spam
+Pizzeria Remo,Dario Baggini,Authentic Italian restaurant; best pizza I ever ate in my life. You know it’s going to be good when Italians go there. Prices are really cheap as well; it was only 8€ for my pizza.,dataset/menu/pizzeria_remo_dario_baggini.png,5,menu,spam
+Pizzeria Remo,Abdurrahman Mar,I strongly recommend. The best of the best. Very thin and soft. Nice service and reasonable price.,dataset/outdoor_atmosphere/pizzeria_remo_abdurrahman_mar.png,5,outdoor_atmosphere,spam
+Diyarbakir Ocakbasi Palace,Nur Kirazli,The food is quite delicious. The prices are higher than the average in Samsun; but suitable for a decent place. The waiters were interested; the appetizers were delicious.,dataset/menu/diyarbakir_ocakbasi_palace_nur_kirazli.png,4,menu,spam
+Diyarbakir Ocakbasi Palace,Muhsin Ates,It was a great place; the most beautiful meatloaf I've ever eaten in my life.  The cheddar lahmacun and stuffed ribs were perfect; and the meat had no smell. The service is nice; they respect.,dataset/taste/diyarbakir_ocakbasi_palace_muhsin_ates.png,5,taste,spam
+Diyarbakir Ocakbasi Palace,Nazli Fidanay,The food was great; the service was fast and the staff was friendly. Stuffed ribs were very fresh and delicious.,dataset/outdoor_atmosphere/diyarbakir_ocakbasi_palace_nazli_fidanay.png,5,outdoor_atmosphere,spam
+Kaliteci,Ahmet Batur,Delicious tastes; clean place.,dataset/outdoor_atmosphere/kaliteci_ahmet_batur.png,4,outdoor_atmosphere,spam
+Sanukiya,Jinah Lee,Prices were cheap. But the queue was too long. I liked the flavors as a korean.,dataset/menu/sanukiya_jinah_lee.png,4,menu,spam
+Sanukiya,Arthur Jonathan,The queue was not that long fortunately! The staffs were all very kind and welcoming. The food was amazing! The udon was the hero; it was very flavorful & juicy!,dataset/taste/sanukiya_arthur_jonathan.png,5,taste,spam
+KFC,Rabia Ozturk,It was delicious!,dataset/outdoor_atmosphere/kfc_rabia_ozturk.png,5,outdoor_atmosphere,spam
+KFC,Fatma Zullu,"The place is very nice; I think, the food was fresh and good; one of my favorite places.",dataset/taste/kfc_fatma_zullu.png,5,taste,spam
+Kruvasan,Beste Yalcin,I ate a lot of croissants; but this was the best quality beautiful croissant I've ever eaten in my life. Crispy on the outside; with lots of butter on the inside; the smell was amazing.,dataset/menu/kruvasan_beste_yalcin.png,4,menu,spam
+Kruvasan,Sila Gezgin,The place was crowded when we first went. We preferred chocolate croissants. It was fresh and beautiful.,dataset/indoor_atmosphere/kruvasan_sila_gezgin.png,4,indoor_atmosphere,spam
+Kruvasan,Ali Cakir,I recommend..,dataset/indoor_atmosphere/kruvasan_ali_cakir.png,5,indoor_atmosphere,spam
+Kalkanoglu Pilav,Sebnem Yilmaz,My order arrived late and cold. Prices were high.,dataset/menu/kalkanoglu_pilav_sebnem_yilmaz.png,3,menu,spam
+Monica Kitchen,Dilara Azak,The products were delicious; the atmosphere was nice. Prices are reasonable; service needs improvement.,dataset/taste/monica_kitchen_dilara_azak.png,4,taste,spam
+Sevinc Pastanesi,Mehmet Hatip,I tried Pavlova but it was not what I expected. But it could also be about my choice.,dataset/outdoor_atmosphere/sevinc_pastanesi_mehmet_hatip.png,4,outdoor_atmosphere,spam
+Sevinc Pastanesi,Cenk Basbolat,Menu was like that. Average business.,dataset/menu/sevinc_pastanesi_cenk_basbolat.png,5,menu,spam
+Hasan Usta,Ali Cebeci,Spacious; clean and comfortable place. Employees concerned. We didn't wait long for the order. It was one of the best lahmacun I've ever eaten. Prices are affordable.,dataset/outdoor_atmosphere/hasan_usta_ali_cebeci.png,5,outdoor_atmosphere,spam
+Magro,Selda Can,Everything really appeals to both the eyes and the stomach. They have an incredibly beautiful and varied menu. Prices are reasonable according to the taste; quality and satiety of the menu.,dataset/outdoor_atmosphere/magro_selca_can.png,5,outdoor_atmosphere,spam
+Duveroglu,Cigdem Karakaya,Even though it's not as good as it used to be; it's still my choice. I would be more satisfied if they boiled the stuffed meatballs.,dataset/indoor_atmosphere/duveroglu_cigdem_karakaya.png,3,indoor_atmosphere,spam
+Rumeli Iskembecisi,Efe Arslan,I found the trotter soup I was looking for; it was very nice; thank you. Employees are not friendly.,dataset/outdoor_atmosphere/rumeli_iskembecisi_efe_arslan.png,4,outdoor_atmosphere,spam
+Rumeli Iskembecisi,Adil Kucukaga,Amazing!,dataset/outdoor_atmosphere/rumeli_iskembecisi_adil_kucukaga.png,5,outdoor_atmosphere,spam
+Ege Vera,Enis Kurtlu,The environment is clean and nice. The taste of the food was not bad either.,dataset/outdoor_atmosphere/ege_vera_enis_kurtlu.png,3,outdoor_atmosphere,spam
+Ege Vera,Mehmet Eser,A successful business. It's pretty good in food. Prices could be a little more reasonable.,dataset/outdoor_atmosphere/ege_vera_mehmet_eser.png,4,outdoor_atmosphere,spam
+Ege Vera,Saliha Senyildiz,The ingredients used in the dishes were of very high quality. Really clean; decent and beautiful place.,dataset/indoor_atmosphere/ege_vera_saliha_senyildiz.png,5,indoor_atmosphere,spam
+Ege Vera,Tahir Gunal,Don't be fooled by the menus seen in the pictures. It seems less and smaller. I did not like the business; I do not recommend.,dataset/menu/ege_vera_tahir_gunal.png,1,menu,spam
+Ege Vera,Ismail Susuz,A delicious and clean place.,dataset/outdoor_atmosphere/ege_vera_ismail_susuz.png,5,outdoor_atmosphere,spam
+Antakya Mutfagi,Fatih Arslan,Meals were prepared neatly and cleanly. It was a pleasant dining experience in a decent place. Thank you very much.,dataset/indoor_atmosphere/antakya_mutfagi_fatih_arslan.png,5,indoor_atmosphere,spam
+Mevlana Lokantasi,Ozgur Gulmez,It is a historical place. It is one of the oldest and well-known businesses in Antalya. There are delicious soups; home cooked meals; pita kebabs and doner kebabs. Prices are a little expensive.,dataset/indoor_atmosphere/mevlana_lokantasi_ozgur_gulmez.png,4,indoor_atmosphere,spam
+Yesemek,Soner Ceylan,Everything was amazing; thank you Yesemek! I ate yuvarlama and mumbar.,dataset/indoor_atmosphere/yesemek_soner_ceylan.png,5,indoor_atmosphere,spam
+Yesemek,Feyza Kircicek,As someone who tasted Gaziantep cuisine for the first time; I can say that I was amazed. We ordered 2 different trays in order to taste all their local dishes. One had soups and the other had appetizers. The flavors are delicious. It is definitely my recommendation.,dataset/taste/yesemek_feyza_kircicek.png,5,taste,spam
+Yesemek,Berrak Kaymak,I had a nice dining experience. I tasted the local flavors of Gaziantep; they were good.,dataset/outdoor_atmosphere/yesemek_berrak_kaymak.png,4,outdoor_atmosphere,spam
+Yesemek,Zeynep Aktop,The food was delicious but not as exaggerated in other reviews or did not appeal to my taste. The environment is quite nice. The place was noisy because it was crowded.,dataset/taste/yesemek_zeynep_aktop.png,4,taste,spam
+Yesemek,Irem Kayaguc,Menu was like that; Recommend.,dataset/menu/yesemek_irem_kayaguc.png,5,menu,spam
+Umut Pide,Gulay Elveren,Everything was delicious. Business personnel were also friendly.,dataset/outdoor_atmosphere/umut_pide_gulay_elveren.png,5,outdoor_atmosphere,spam
+Sema Gozleme,Beyza Eren,Bazlama and menemen were delicious. The place was not clean so I did not have a pleasant dining experience.,dataset/menu/sema_gozleme_beyza_eren.png,3,menu,spam
+Sema Gozleme,Hanifi Cetin,The most delicious and sincere place to eat in Fethiye. A small family restaurant. I especially liked the veggie pancakes. I strongly recommend.,dataset/outdoor_atmosphere/sema_gozleme_hanifi_cetin.png,5,outdoor_atmosphere,spam
+Sema Gozleme,Kim Robins,I didn't like the food very much because it was too salty.,dataset/outdoor_atmosphere/sema_gozleme_kim_robins.png,3,outdoor_atmosphere,spam
+Asucan Restaurant,Kjiong Son,Place was not clear.,dataset/indoor_atmosphere/asucan_restaurant_kjiong_son.png,3,indoor_atmosphere,spam
+Ciya Sofrasi,Nihat Karabiber,Famous place; fast service; caring staff; the taste of the sherbet we tried for the first time was legendary.,dataset/outdoor_atmosphere/ciya_sofrasi_nihat_karabiber.png,5,outdoor_atmosphere,spam
+Ciya Sofrasi,Deniz Miray,Our choice was Antep style lahmacun; since I ate it last time; I found it very dry inside; unfortunately the taste of garlic was barely felt. The cleanliness of the place was good.,dataset/taste/ciya_sofrasi_deniz_miray.png,3,taste,spam
+Koco Restaurant,Muslum Bahceci,Yummy; delicious and wonderful.. The view is as beautiful as the food.,dataset/taste/koco_restaurant_muslum_bahceci.png,5,taste,spam
+Tavuk Dunyasi,Furkan Yildirim,The ingredients used in the salad were rotten; I didn't like it at all.,dataset/taste/tavuk_dunyasi_furkan_yildirim.png,1,taste,spam
+Tavuk Dunyasi,Yusuf Sezer,Recommend.,dataset/outdoor_atmosphere/tavuk_dunyasi_yusuf_sezer.png,5,outdoor_atmosphere,spam
+Kumsal Lokantasi,Burcak Kurt,Overall everything was delicious; however; we didn't like the eggplant salad; it was too sour and didn't taste like eggplant at all.,dataset/taste/kumsal_lokantasi_burcak_kurt.png,4,taste,spam
+Kumsal Lokantasi,Bekir Boz,The smell of the wet wipes was very nice. It's a clean place.,dataset/outdoor_atmosphere/kumsal_lokantasi_bekir_boz.png,4,outdoor_atmosphere,spam
+Kumsal Lokantasi,Bora Gungoren,Nice salad; it was delicious.,dataset/taste/kumsal_lokantasi_bora_gungoren.png,5,taste,spam
+Salih Usta,Hasan Erdem,Have you ever seen a rainbow in these colors?! The 5-year-old boy would draw the umbrella more beautifully; which was said to be made of sugar dough. The cake doesn't even stand up straight. A birthday cake would only be so sloppy.,dataset/taste/salih_usta_hasan_erdem.png,1,taste,spam
+Salih Usta,Busra Subasi,My and my 3.5-year-old daughter's favorite place is in Samsun; we love the products of this place the most.,dataset/taste/salih_usta_busra_subasi.png,5,taste,spam
+Red Dragon,Teoman Sezer,Chinese salad and spring rolls were okay. I didn't like the veggie noodles very much. The plum sauce of the peking duck was delicious but the presentation was poor.,dataset/outdoor_atmosphere/red_dragon_teoman_sezer.png,4,outdoor_atmosphere,spam
+Red Dragon,Ediz Aksoy,When you come to the front of the place; its magnificent exterior design really draws attention and I think it was done very well and I personally liked it very much. The atmosphere is truly magnificent. We tried Chinese food; especially ramen was delicious.,dataset/taste/red_dragon_ediz_aksoy.png,5,taste,spam
+Mado,Ali Berk Kustul,Well; it was very nice; the service was very fast and the prices are reasonable; I recommend delicious food.,dataset/outdoor_atmosphere/mado_ali_berk_kustul.png,5,outdoor_atmosphere,spam
+Mado,Asuman Mutevellioglu,It may be the most friendly service I have ever encountered in my life.  All the employees were very sweet; caring people. the drinks and food were very tasty and fresh. I will definitely come again.,dataset/taste/mado_asuman_mutevellioglu.png,5,taste,spam
+Classic Thai,Dogan Akyel,Amazing flavors!,dataset/menu/classic_thai_dogan_akyel.png,5,menu,spam
+Classic Thai,Maria Taison,We’ve had a great dinner at this restaurant. The food was delicious; well prepared and nicely seasoned. I did not know much about Thai cuisine; but I enjoyed the meal very much. Plus the atmosphere of the place is relaxing; staff nice and friendly and prices pretty moderate. Perfect spot to eat out with friends in the center of Istanbul. Would love to come back again!,dataset/taste/classic_thai_maria_taison.png,4,taste,spam
+Classic Thai,Alev Ozturk,Although far easts foods suits my taste; Tom Yum soup was very aromatic and different; I didn't like it.,dataset/menu/classic_thai_alev_ozturk.png,5,menu,spam
+Inegol Restaurant,Erkan Yilmaz,I did not recommend. Bad service.,dataset/outdoor_atmosphere/inegol_restaurant_erkan_yilmaz.png,3,outdoor_atmosphere,spam
+Inegol Restaurant,Selim Burusuk,The place is beautiful; the food sucks. Also expensive.,dataset/menu/inegol_restaurant_selim_burusuk.png,4,menu,spam
+Karakoy Lokantasi,Ece Oztunc,The place was too noisy. We didn't really enjoy the food in this mess.,dataset/taste/karakoy_lokantasi_ece_oztunc.png,3,taste,spam
+Mersinli Cigerci Apo,Mahmut Demir,The treats and the food were really delicious; each of them was not one of those places that would cause you to come to the place and leave unhappy.,dataset/taste/mersinli_cigerci_apo_mahmut_demir.png,5,taste,spam
+Sini Mugla,Ipek Cicek,"The place was full of flies and one of them fell into my food. When I asked for my meal to be changed,; they refused.",dataset/indoor_atmosphere/sini_mugla_ipek_cicek.png,1,indoor_atmosphere,spam
+Sini Mugla,Sevgi Kizilirmak,The food is super delicious; I especially recommend the fig dessert. Service personnel interest and hygiene were also high.,dataset/outdoor_atmosphere/sini_mugla_sevgi_kizilirmak.png,5,outdoor_atmosphere,spam
+Fikret Balik Restaurant,Hilal Ozden,Portions were quite adequate. Along with your meal comes multiple and delicious appetizers. Seasonal salad was also delicious; vegetables were fresh.,dataset/taste/fikret_balik_restaurant_hilal_ozden.png,4,taste,spam
+Kocak Baklava,Sadrettin Guner,The staff; the dessert; the place; the ambiance; everything is very nice. It was the best baklava I have ever eaten in my life!,dataset/taste/kocak_baklava_sadrettin_guner.png,5,taste,spam
+Kadineli,Basak Kaymak,Delicious!,dataset/outdoor_atmosphere/kadineli_basak_kaymak.png,5,outdoor_atmosphere,spam
+Kadineli,Eyup Sayar,If you want to eat delicious home-cooked meals at an affordable price; definitely stop by during your visit to Cappadocia. The employees are kind and concerned. The environment is nice.,dataset/indoor_atmosphere/kadineli_eyup_sayar.png,5,indoor_atmosphere,spam
+Anzelha,Recep Akdag,Staff greeted with a smile at the door. The atmosphere was very nice. Delicious appetizers arrived before the meal.,dataset/outdoor_atmosphere/anzelha_recep_akdag.png,5,outdoor_atmosphere,spam
+Anzelha,Burhanettin Ineri,Everyone is smilingİ the food is delicious. Great place; I recommend it.,dataset/indoor_atmosphere/anzelha_burhanettin_ineri.png,5,indoor_atmosphere,spam
+Anzelha,Isa Arapoglu,Thank you for providing quality service in a luxury venue.,dataset/outdoor_atmosphere/anzelha_isa_arapoglu.png,5,outdoor_atmosphere,spam
+Akpinar Restaurant,Ertan Yilmaz,The view is beautiful. The food was very bad.,dataset/taste/akpinar_restaurant_ertan_yilmaz.png,1,taste,spam
+Kebabci Mahmut,Ibrahim Tuncer,Perfect; a relaxing space. Quality and delicious food.,dataset/outdoor_atmosphere/kebabci_mahmut_ibrahim_tuncer.png,5,outdoor_atmosphere,spam
+Kebabci Mahmut,Erol Tutkun,All the food that came to the table was very high quality and delicious. I recommend it to everyone.,dataset/outdoor_atmosphere/kebabci_mahmut_erol_tutkun.png,5,outdoor_atmosphere,spam
+Kebabci Mahmut,Selin Yilmazer,Affordable prices. Recommend.,dataset/outdoor_atmosphere/kebabci_mahmut_selin_yilmazer.png,4,outdoor_atmosphere,spam
+J Burber,Halit Kerim,Hamburger buns are fresh; The patties are soft and delicious. Their special sauces are delicious; It adds a nice flavor to the burger.,dataset/indoor_atmosphere/j_burger_emre_aslan.png,4,indoor_atmosphere,spam
+J Burber,Cenk Gural,Really delicious burger. I would recommend it to everyone. Thanks to the smiling staff.,dataset/taste/j_burger_cenk_gural.png,5,taste,spam
+Popeyes,Mirac Kilic,They got my order wrong and got into an argument with me. You are disgusting! Terrible service; mismanagement.,dataset/menu/popeyes_mirac_kilic.png,1,menu,spam
+Popeyes,Nail Beyazit,Food should have been better cooked I think overall not bad.,dataset/outdoor_atmosphere/popeyes_nail_beyazit.png,4,outdoor_atmosphere,spam
+Popeyes,Orhan Kadirli,I couldn't finish my meal .Bad smell and bad taste. It seems that the chicken is spoiled. I don't know what to say; but you should not eat in this place. I feel bad because I decided to eat from them.,dataset/taste/popeyes_orhan_kadirli.png,2,taste,spam
+Say Cheese,Saniye Atga,A delicious masterpiece comes out when it is made in a Parmesan wheel; made with fresh pasta dough by hand; and with its beautiful sauces. The price is also quite reasonable.,dataset/taste/say_cheese_saniye_atga.png,4,taste,spam
+Kukis Suadiye,Beyhan Mutlu,Reasonable prices and amazing deserts.,dataset/menu/kukis_suadiye_beyhan_mutlu.png,5,menu,spam
+Lipa,Kaim Bros,I did not like the interior atmosphere; seems a little old to me.,dataset/outdoor_atmosphere/lipa_kaim_bros.png,2,outdoor_atmosphere,spam
+Lipa,Zeynep Barista,All meals were successful; I recommend.,dataset/taste/lipa_zeynep_barista.png,4,taste,spam
+Minoa,Oznur Akbas,Beautiful; cute; stylish and delicious food. It's a bit sad that it is used more like a restaurant than a book cafe; as it turns into a restaurant at a certain time of the evening; so they took us to a place in the back.,dataset/indoor_atmosphere/minoa_oznur_akbas.png,4,indoor_atmosphere,spam
+Minoa,Melis Sezer,A nice place to drink coffee while reading a book. My meat dish arrived cold first. When I reported this to the waiter; they warmed it up and brought it; and then the meat was dry. I did not see the interest that I expected.,dataset/taste/minoa_melis_sezer.png,3,taste,spam
+Suflor,Henna Saleem,This café was highly recommended by an Istanbul-based blogger for its soufflés. The unique 2D interiors and decorations caught my eye as soon as I entered. I opted for the Chocolate with Orange soufflé; while my husband chose the Chocolate with Blueberries. I must say; the taste was absolutely amazing.,dataset/outdoor_atmosphere/suflor_henna_saleem.png,4,outdoor_atmosphere,spam
+Suflor,Baran Koca,It was worth getting up and going from Beylikduzu. Atmosphere 10/10,dataset/indoor_atmosphere/suflor_baran_koca.png,5,indoor_atmosphere,spam
+Suflor,Deniz Acar,This is one of the best sufles I’ve ever eaten. Although it was package service; I like the presentation; taste and texture of the chocolate. Thank you Suflor Team! ,dataset/taste/suflor_deniz_acar.png,5,taste,spam
+Berdan Doner,Volkan Gunay,Price performance was satisfactory. Although it was wood fired it could have been better. Maybe doner can be asked to be a little more cooked.,dataset/taste/berdan_doner_volkan_gunay.png,4,taste,spam
+Berdan Doner,Gokhan Demirozer,Its wood-fired doner kebab tastes different; it's one of the best doner meats in this area; and it's affordable; too. Congratulations to the business. I will visit once again.,dataset/taste/berdan_doner_gokhan_demirozer.png,5,taste,spam
+Miss Pizza,Burak Erek,The quality of the pizzas was worse than before. They made me wait for a while even though the tables were empty.,dataset/indoor_atmosphere/miss_pizza_burak_erek.png,2,indoor_atmosphere,spam
