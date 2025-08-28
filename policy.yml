@@ -1,0 +1,18 @@
+# policy.yml
+# Maps model outputs to actions based on thresholds per label
+
+labels:
+  spam_ad:
+    threshold: 0.5
+    action: BLOCK
+  off_topic:
+    threshold: 0.5
+    action: BLOCK
+  non_visit_rant:
+    threshold: 0.5
+    action: BLOCK
+  relevant:
+    threshold: 0.5
+    action: ALLOW
+
+# Actions: ALLOW, REVIEW_MANUAL, BLOCK
