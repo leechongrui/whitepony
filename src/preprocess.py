@@ -5,87 +5,57 @@ import numpy as np
 
 """
 Preprocess and clean sampled df
-- 'pics' column - turn into binary: has_pics
-- 'resp' column - dict -> take text value out -> final value is string for resp column 
+- 'resp' column - dict -> take text value out -> final value is string for resp column (DONE)
 
 Feature engineering 
-- 'text' column -> sentiment analysis score (NOT)
-- 'text' length
-- 'user_id' and 'rating' - spot reviews from users with high number of extreme ratings (NOT)
-- 'text' - extract promotional or irrelevant keywords like "sale" etc (NOT)
-- 'response' - binary have or no response 
+- 'text' column -> sentiment analysis score (DONE)
+- 'text' length (DONE)
+- 'response' - binary have or no response (DONE)
+- 'pics' column - turn into binary: has_pics (DONE)
 
 """
-from ingest import load_csv, load_parquet
+from ingest import load_csv, save_dataframe
+import ast
+import nltk
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
-# paths to sampled parquet and csv files
+# paths to sampled parquet and csv files ---- CHANGE ACCORDINGLY
 sampled_parquet_path = r'C:\Users\Fabian\whitepony\data\interim\sampled_df.parquet'
-sampled_csv_path = r'C:\Users\Wang Song\Downloads\Tiktok hackathon\whitepony\data\interim'
+sampled_csv_path = r'C:\Users\Fabian\whitepony\data\interim\sampled_df.csv'
 
-# function to create new column classifying 1 or 0 if empty or not: used on pics and resp columns 
-
-def has_input(value):
+# HELPER FUNCTION: function to create new column classifying 1 or 0 if empty or not: used on pics and resp columns 
+def has_input(value: any) -> int:
     """
-    Check if a cell has meaningful input (1) or is empty/null (0).
-    
-    Parameters:
-    -----------
-    value : any
-        The value to check
-    
-    Returns:
-    --------
-    int : 1 if has input, 0 if no input
+    accepts value from either pics or resp column to check, return 1 if theres input, 0 otherwise
     """
-    
     # Handle NaN/None values
     if pd.isna(value) or value is None:
         return 0
-    
     # Handle empty strings or just whitespace
     if isinstance(value, str) and value.strip() == '':
         return 0
-    
-    # Handle numeric zeros
-    if isinstance(value, (int, float)) and value == 0:
-        return 0
-    
     # Handle string representations of zero or empty structures
     if isinstance(value, str):
         cleaned_value = value.strip()
         if cleaned_value in ['0', '[]', '{}', '()', 'null', 'NULL', 'None']:
             return 0
-    
     # Handle empty lists
     if isinstance(value, list) and len(value) == 0:
         return 0
-    
     # If we get here, the value has meaningful content
     return 1
 
-def create_binary_column(df, column_name):
+def create_binary_column(df: pd.DataFrame, column_name: str) -> pd.DataFrame:
     """
-    Create a binary indicator column for any given column.
-    
-    Parameters:
-    -----------
-    df : pandas.DataFrame
-        Input dataframe
-    column_name : str
-        Name of the column to convert to binary
-    
-    Returns:
-    --------
-    pandas.DataFrame : DataFrame with new binary column added
+    accepts df and column name to convert to binary,
+    return new df with new binary column
     """
-    
+    # check if column name exists
     if column_name not in df.columns:
         print(f"Error: Column '{column_name}' not found in dataframe")
         return df
-    
     # Create copy to avoid modifying original
     df_copy = df.copy()
-    
     # Create binary column
     binary_col_name = f"{column_name}_binary"
     df_copy[binary_col_name] = df_copy[column_name].apply(has_input)
@@ -94,115 +64,84 @@ def create_binary_column(df, column_name):
     total = len(df_copy)
     has_input_count = df_copy[binary_col_name].sum()
     no_input_count = total - has_input_count
-    
     print(f"Created '{binary_col_name}' from '{column_name}':")
     print(f"  Has input (1): {has_input_count} ({has_input_count/total*100:.1f}%)")
     print(f"  No input (0): {no_input_count} ({no_input_count/total*100:.1f}%)")
     
     return df_copy
 
-def create_pics_resp_binary(df):
-    """
-    Create binary columns for pics and resp columns specifically.
-    
-    Parameters:
-    -----------
-    df : pandas.DataFrame
-        Input dataframe
-    
-    Returns:
-    --------
-    pandas.DataFrame : DataFrame with pics_binary and resp_binary columns
-    """
-    
-    df_result = df.copy()
-    
-    # Create pics_binary column
-    if 'pics' in df.columns:
-        df_result = create_binary_column(df_result, 'pics')
-    else:
-        print("Warning: 'pics' column not found")
-    
-    # Create resp_binary column  
-    if 'resp' in df.columns:
-        df_result = create_binary_column(df_result, 'resp')
-    else:
-        print("Warning: 'resp' column not found")
-    
-    return df_result
-
-
-
 # function to convert dict to string for resp column 
+def extract_resp_text(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Extract text from 'resp' column and replace values in place.
+    Skips rows where 'resp' is empty/null.
+    accepts df and return new df with new resp column with extracted text
+    """
+    def get_text_from_resp(resp_value):
+        """Extract text from response dict."""
+        # skip rows where resp is empty/null
+        if pd.isna(resp_value) or resp_value == '' or resp_value == '{}':
+            return None
+        
+        try:
+            # Parse string representation of dict
+            if isinstance(resp_value, str):
+                resp_dict = ast.literal_eval(resp_value)
+            else:
+                resp_dict = resp_value
+            # Extract text field
+            return resp_dict.get('text', None)
+        # error handling
+        except (ValueError, SyntaxError, AttributeError):
+            return None
+    
+    # Create copy and extract text
+    df['resp'] = df['resp'].apply(get_text_from_resp)
+    return df
 
 # function to generate text length column 
-
-def calculate_text_length(df, text_column='text', new_column_name='text_length'):
+def add_word_count_column(df: pd.DataFrame, text_column: str, new_column_name: str) -> pd.DataFrame:
     """
-    Calculate the length of text in a specified column and create a new column with the length.
-    
-    Parameters:
-    -----------
-    df : pandas.DataFrame
-        Input dataframe
-    text_column : str, default='text'
-        Name of the column containing text to measure
-    new_column_name : str, default='text_length'
-        Name of the new column to create with length values
-    
-    Returns:
-    --------
-    pandas.DataFrame : DataFrame with new length column added
+    accepts df and text column name to add text length column, return new df with new text length column
     """
-    
-    if text_column not in df.columns:
-        print(f"Error: Column '{text_column}' not found in dataframe")
-        return df
-    
-    # Create copy to avoid modifying original
-    df_copy = df.copy()
-    
-    # Calculate text length, handling NaN/None values
-    df_copy[new_column_name] = df_copy[text_column].apply(
-        lambda x: len(str(x)) if pd.notna(x) else 0
+    df[new_column_name] = df[text_column].apply(
+        lambda x: len(str(x).split()) if pd.notna(x) else 0
     )
-    
-    # Print summary statistics
-    total_rows = len(df_copy)
-    avg_length = df_copy[new_column_name].mean()
-    min_length = df_copy[new_column_name].min()
-    max_length = df_copy[new_column_name].max()
-    zero_length_count = (df_copy[new_column_name] == 0).sum()
-    
-    print(f"Created '{new_column_name}' column from '{text_column}':")
-    print(f"  Average length: {avg_length:.1f} characters")
-    print(f"  Min length: {min_length}")
-    print(f"  Max length: {max_length}")
-    print(f"  Rows with 0 length: {zero_length_count} ({zero_length_count/total_rows*100:.1f}%)")
-    
-    return df_copy
+    return df
 
-# Simple usage function specifically for 'text' column
-def add_text_length_column(df):
+# function to compute sentiment score for text column
+nltk.download('vader_lexicon')
+def add_sentiment_scores(df: pd.DataFrame, text_column: str = 'text') -> pd.DataFrame:
     """
-    Add a 'text_length' column to dataframe based on the 'text' column.
-    
-    Parameters:
-    -----------
-    df : pandas.DataFrame
-        Input dataframe with 'text' column
-    
-    Returns:
-    --------
-    pandas.DataFrame : DataFrame with 'text_length' column added
+    accepts df and text column name to add sentiment scores, return new df with new sentiment scores column
     """
-    
-    return calculate_text_length(df, text_column='text', new_column_name='text_length')
-
-# 
+    # initialise sentiment intensity analyzer
+    sia = SentimentIntensityAnalyzer()
+    # Apply VADER to each row
+    df['sentiment_score'] = df[text_column].apply(lambda x: sia.polarity_scores(str(x))['compound'])
+    # classify into Positive / Neutral / Negative, purpose to detect extreme positive and negative reviews
+    df['sentiment_label'] = df['sentiment_score'].apply(
+        lambda x: 'positive' if x > 0.8 else ('negative' if x < -0.8 else 'neutral')
+    )
+    return df
 
 if __name__ == "__main__":
     # load sampled df
-    sampled_df = load_csv(sampled_csv_path)
-    
+    preprocess_df = load_csv(sampled_csv_path)
 
+    # create binary column for pics and resp columns
+    preprocess_df = create_binary_column(preprocess_df, 'pics')
+    preprocess_df = create_binary_column(preprocess_df, 'resp')
+
+    # extract text from resp column
+    preprocess_df = extract_resp_text(preprocess_df)
+
+    # add text length column
+    preprocess_df = add_word_count_column(preprocess_df, 'text', 'word_count')
+
+    # add sentiment scores column
+    preprocess_df = add_sentiment_scores(preprocess_df)
+
+    # save sampled df
+    dest_path = r'C:\Users\Fabian\whitepony\data\interim\model_ready.csv'
+    save_dataframe(preprocess_df, dest_path)

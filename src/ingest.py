@@ -21,9 +21,9 @@ review_filepath = r"C:\Users\Fabian\whitepony\data\raw\review-California_10.json
 metadata_filepath = r"C:\Users\Fabian\whitepony\data\raw\meta-California.json.gz"
 
 # function to load csv files into dataframe
-def load_csv(file_path: str) -> pd.DataFrame:
+def load_csv(file_path: str, max_rows: Optional[int] = None) -> pd.DataFrame:
     try:
-        df = pd.read_csv(file_path)
+        df = pd.read_csv(file_path, nrows=max_rows)
         print(f"CSV file successfully loaded from {file_path}")
         print(df.info())
         return df
@@ -32,9 +32,9 @@ def load_csv(file_path: str) -> pd.DataFrame:
         return pd.DataFrame()  # Return empty DataFrame if error occurs
 
 # function to load parquet files into dataframe
-def load_parquet(file_path: str) -> pd.DataFrame:
+def load_parquet(file_path: str, max_rows: Optional[int] = None) -> pd.DataFrame:
     try:
-        df = pd.read_parquet(file_path)
+        df = pd.read_parquet(file_path, nrows=max_rows)
         print(f"Parquet file successfully loaded from {file_path}")
         print(df.info())
         return df
