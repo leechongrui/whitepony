@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from transformers import DistilBertTokenizerFast
@@ -6,7 +7,7 @@ from transformers import DistilBertForSequenceClassification
 from transformers import Trainer, TrainingArguments
 
 # Load the CSV file directly from the path (replace with your actual file path)
-df = pd.read_csv("../data/raw/fake reviews dataset.csv")  # Provide the correct file path
+df = pd.read_csv("./data/raw/kaggle_product_fake_reviews.csv")  # Provide the correct file path
 
 # Map labels to integers (Assuming 'computer_generated' and 'user_generated' as the labels)
 label_map = {"CG": 0, "OR": 1}
@@ -14,7 +15,7 @@ df['generation_type'] = df['label'].map(label_map)
 
 # Split into train + validation
 train_texts, val_texts, train_labels, val_labels = train_test_split(
-    df['text'].tolist(),
+    df['text_'].tolist(),
     df['generation_type'].tolist(),
     test_size=0.2,
     random_state=42,
@@ -51,10 +52,8 @@ model = DistilBertForSequenceClassification.from_pretrained(
     num_labels=2
 )
 
-
-
 training_args = TrainingArguments(
-    output_dir='./results',
+    output_dir='./output/checkpoints',
     num_train_epochs=3,
     per_device_train_batch_size=16,
     per_device_eval_batch_size=32,
@@ -75,8 +74,33 @@ trainer = Trainer(
 
 trainer.train()
 
-trainer.evaluate()
+
+eval_results = trainer.evaluate()
+
+''' 
+TO VERIFY THE OUTPUT
+'''
+
+# Get predictions on validation set
+val_pred = trainer.predict(val_dataset)
+import numpy as np
+val_pred_scores = torch.nn.functional.softmax(torch.tensor(val_pred.predictions), dim=1).numpy()
+val_pred_labels = np.argmax(val_pred_scores, axis=1)
+
+# Save validation results to CSV (with scores)
+val_results_df = pd.DataFrame({
+    'text': val_texts,
+    'true_label': val_labels,
+    'score_CG': val_pred_scores[:, 0], 
+    'predicted_label': val_pred_labels
+})
+val_results_df['true_label'] = val_results_df['true_label'].map({0: 'CG', 1: 'OR'})
+val_results_df['predicted_label'] = val_results_df['predicted_label'].map({0: 'CG', 1: 'OR'})
+val_results_path = os.path.join(os.path.dirname(__file__), 'validation_predictions.csv')
+val_results_df.to_csv(val_results_path, index=False)
+print("Evaluation results:", eval_results)
+print(f"Validation predictions saved to {val_results_path}")
 
 # Save the model
-model.save_pretrained("/content/product_model")
-tokenizer.save_pretrained("/content/product_model")
+model.save_pretrained("./product_model/product_model_distilbert")
+tokenizer.save_pretrained("./product_model/product_model_distilbert")

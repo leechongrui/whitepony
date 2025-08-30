@@ -83,14 +83,18 @@ eval_results = trainer.evaluate()
 TO VERIFY THE OUTPUT
 '''
 
+
 # Get predictions on validation set
 val_pred = trainer.predict(val_dataset)
-val_pred_labels = np.argmax(val_pred.predictions, axis=1)
+val_pred_scores = torch.nn.functional.softmax(torch.tensor(val_pred.predictions), dim=1).numpy()
+val_pred_labels = np.argmax(val_pred_scores, axis=1)
 
-# Save validation results to CSV
+# Save validation results to CSV (with scores)
 val_results_df = pd.DataFrame({
 	'text': val_texts,
 	'true_label': val_labels,
+	'score_truthful': val_pred_scores[:, 0],
+	'score_deceptive': val_pred_scores[:, 1],
 	'predicted_label': val_pred_labels
 })
 val_results_df['true_label'] = val_results_df['true_label'].map({0: 'truthful', 1: 'deceptive'})

@@ -3,4 +3,6 @@ data/
 
 # Models
 hotel_model/*/
+product_model/*/
+output/
 results/
