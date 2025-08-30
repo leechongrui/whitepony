@@ -17,14 +17,18 @@ df = pd.read_csv(csv_path)
 label_map = {"truthful": 0, "deceptive": 1}
 df['truth_value'] = df['deceptive'].map(label_map)
 
-# Split into train + validation
-train_texts, val_texts, train_labels, val_labels = train_test_split(
-	df['text'].tolist(),
-	df['truth_value'].tolist(),
+
+# Split into train + validation and keep indices
+train_indices, val_indices = train_test_split(
+	range(len(df)),
 	test_size=0.2,
 	random_state=42,
 	stratify=df['truth_value']
 )
+train_texts = df.loc[train_indices, 'text'].tolist()
+val_texts = df.loc[val_indices, 'text'].tolist()
+train_labels = df.loc[train_indices, 'truth_value'].tolist()
+val_labels = df.loc[val_indices, 'truth_value'].tolist()
 
 # Tokenization of text
 tokenizer = DistilBertTokenizerFast.from_pretrained("distilbert-base-uncased")
@@ -89,18 +93,16 @@ val_pred = trainer.predict(val_dataset)
 val_pred_scores = torch.nn.functional.softmax(torch.tensor(val_pred.predictions), dim=1).numpy()
 val_pred_labels = np.argmax(val_pred_scores, axis=1)
 
-# Save validation results to CSV (with scores)
-val_results_df = pd.DataFrame({
-	'text': val_texts,
-	'true_label': val_labels,
-	'score_truthful': val_pred_scores[:, 0],
-	'score_deceptive': val_pred_scores[:, 1],
-	'predicted_label': val_pred_labels
-})
-val_results_df['true_label'] = val_results_df['true_label'].map({0: 'truthful', 1: 'deceptive'})
-val_results_df['predicted_label'] = val_results_df['predicted_label'].map({0: 'truthful', 1: 'deceptive'})
+
+
+
+# Append only the score_deceptive column to the original validation DataFrame using val_indices
+original_val_df = df.iloc[val_indices].reset_index(drop=True)
+original_val_df = original_val_df.copy()
+original_val_df['score_deceptive'] = val_pred_scores[:, 1]
+
 val_results_path = os.path.join(os.path.dirname(__file__), 'output/validation_predictions.csv')
-val_results_df.to_csv(val_results_path, index=False)
+original_val_df.to_csv(val_results_path, index=False)
 print("Evaluation results:", eval_results)
 print(f"Validation predictions saved to {val_results_path}")
 dashboard_report(val_csv_path=val_results_path)

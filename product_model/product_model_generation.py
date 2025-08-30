@@ -5,6 +5,7 @@ from transformers import DistilBertTokenizerFast
 import torch
 from transformers import DistilBertForSequenceClassification
 from transformers import Trainer, TrainingArguments
+from dashboard_report import dashboard_report
 
 # Load the CSV file directly from the path (replace with your actual file path)
 df = pd.read_csv("./data/raw/kaggle_product_fake_reviews.csv")  # Provide the correct file path
@@ -87,19 +88,20 @@ import numpy as np
 val_pred_scores = torch.nn.functional.softmax(torch.tensor(val_pred.predictions), dim=1).numpy()
 val_pred_labels = np.argmax(val_pred_scores, axis=1)
 
-# Save validation results to CSV (with scores)
-val_results_df = pd.DataFrame({
-    'text': val_texts,
-    'true_label': val_labels,
-    'score_CG': val_pred_scores[:, 0], 
-    'predicted_label': val_pred_labels
-})
-val_results_df['true_label'] = val_results_df['true_label'].map({0: 'CG', 1: 'OR'})
-val_results_df['predicted_label'] = val_results_df['predicted_label'].map({0: 'CG', 1: 'OR'})
+
+
+
+# Append the score_CG column to the original validation DataFrame and save all columns
+original_val_df = df[df['text_'].isin(val_texts)].reset_index(drop=True)
+original_val_df = original_val_df.copy()
+original_val_df['score_CG'] = val_pred_scores[:, 0]
+
+
 val_results_path = os.path.join(os.path.dirname(__file__), 'validation_predictions.csv')
-val_results_df.to_csv(val_results_path, index=False)
+original_val_df.to_csv(val_results_path, index=False)
 print("Evaluation results:", eval_results)
 print(f"Validation predictions saved to {val_results_path}")
+dashboard_report(val_csv_path=val_results_path)
 
 # Save the model
 model.save_pretrained("./product_model/product_model_distilbert")
