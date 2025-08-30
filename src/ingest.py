@@ -1,17 +1,13 @@
 # ingest.py
 """
-1. Download datasets 
-2. store datasets as dataframe 
-3. drop irrelevant metadata columns: address, latitude, longitude, URL (address data covered by gmap_id)
-4. Extract unique categories from the category column in the business metadata
-5. merge review dataset and business metadata on gmap_id (one-to-many merge - a business can have many reviews)
-6. Stratified sampling: for each unique business cat, sample 500 - 1000 reviews. if cat < 500 reviews, take all reviews from that cat.
-7. store completed dataset into a dataframe
-
-changes:
-1. before stratifying, drop rows where text is empty or text is not english
-2. 
-
+- Download and store carlifornia reviews and business metadata datasets as dataframe
+- drop irrelevant metadata columns: address, latitude, longitude, URL (address data covered by gmap_id)
+- filter review dataset rows where text is empty or non-english
+- Extract unique categories from the category column in the business metadata
+- reclassify categories in metadata category column into broader categories
+- merge review dataset and business metadata on gmap_id (one-to-many merge - a business can have many reviews)
+- Stratified sampling: for each unique business cat, sample 500 - 1000 reviews. if cat < 500 reviews, take all reviews from that cat.
+- generate final dataset as csv and parquet files
 """
 import gzip
 import json
@@ -23,6 +19,28 @@ import re
 # paths to review and business metadata datasets. -------- CHANGE ACCORDINGLY
 review_filepath = r"C:\Users\Fabian\whitepony\data\raw\review-California_10.json.gz"
 metadata_filepath = r"C:\Users\Fabian\whitepony\data\raw\meta-California.json.gz"
+
+# function to load csv files into dataframe
+def load_csv(file_path: str) -> pd.DataFrame:
+    try:
+        df = pd.read_csv(file_path)
+        print(f"CSV file successfully loaded from {file_path}")
+        print(df.info())
+        return df
+    except Exception as e:
+        print(f"Error loading CSV file: {e}")
+        return pd.DataFrame()  # Return empty DataFrame if error occurs
+
+# function to load parquet files into dataframe
+def load_parquet(file_path: str) -> pd.DataFrame:
+    try:
+        df = pd.read_parquet(file_path)
+        print(f"Parquet file successfully loaded from {file_path}")
+        print(df.info())
+        return df
+    except Exception as e:
+        print(f"Error loading Parquet file: {e}")
+        return pd.DataFrame()  # Return empty DataFrame if error occurs
 
 # function accepting file path to .json.gz and return as a dataframe. consider efficiency since dataset is large. 
 def load_json_gz(file_path: str, progress_interval: int = 1000000, max_rows: Optional[int] = None) -> pd.DataFrame:
@@ -208,12 +226,14 @@ def save_dataframe(df: pd.DataFrame, dest_path: str) -> None:
     print(f"DataFrame successfully saved to {dest_path}")
 
 if __name__ == "__main__":
-    # load datasets 
+    # load datasets ----- ADJUST MAX ROWS ACCORDINGLY
     metadata_df = load_json_gz(metadata_filepath)
-    review_df = load_json_gz(review_filepath)
+    review_df = load_json_gz(review_filepath, max_rows=10000000)
 
     # drop irrelevant columns from metadata
-    metadata_df = drop_columns(metadata_df, ['address', 'latitude', 'longitude', 'url', 'relative_results'])
+    metadata_df = drop_columns(metadata_df, 
+    ['name', 'address', 'latitude', 'longitude', 'url', 'relative_results', 'state', 'description', 'MISC', 'price'])
+    review_df = drop_columns(review_df, ['name', 'time'])
 
     # filter rows where 'text' column is empty or non-english
     review_df = filter_non_english_or_empty(review_df, 'text')
@@ -224,11 +244,9 @@ if __name__ == "__main__":
     # merge review and metadata
     merged_df = review_df.merge(metadata_df, on='gmap_id', how='inner', suffixes=('_review', '_metadata'))
 
-    # stratified sampling
-    sampled_df = stratified_sample_by_category(merged_df, sample_size=800)
+    # stratified sampling ----- ADJUST SAMPLE SIZE PER CAT
+    sampled_df = stratified_sample_by_category(merged_df, sample_size=5000)
 
     # save sampled df
     save_dataframe(sampled_df, r'C:\Users\Fabian\whitepony\data\interim\sampled_df.csv')
     save_dataframe(sampled_df, r'C:\Users\Fabian\whitepony\data\interim\sampled_df.parquet')
-
-
