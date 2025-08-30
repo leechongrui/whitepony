@@ -1,4 +1,8 @@
 # preprocess.py
+
+import pandas as pd
+import numpy as np
+
 """
 Preprocess and clean sampled df
 - 'pics' column - turn into binary: has_pics
@@ -19,9 +23,6 @@ sampled_parquet_path = r'C:\Users\Fabian\whitepony\data\interim\sampled_df.parqu
 sampled_csv_path = r'C:\Users\Wang Song\Downloads\Tiktok hackathon\whitepony\data\interim'
 
 # function to create new column classifying 1 or 0 if empty or not: used on pics and resp columns 
-
-import pandas as pd
-import numpy as np
 
 def has_input(value):
     """
@@ -135,6 +136,68 @@ def create_pics_resp_binary(df):
 # function to convert dict to string for resp column 
 
 # function to generate text length column 
+
+def calculate_text_length(df, text_column='text', new_column_name='text_length'):
+    """
+    Calculate the length of text in a specified column and create a new column with the length.
+    
+    Parameters:
+    -----------
+    df : pandas.DataFrame
+        Input dataframe
+    text_column : str, default='text'
+        Name of the column containing text to measure
+    new_column_name : str, default='text_length'
+        Name of the new column to create with length values
+    
+    Returns:
+    --------
+    pandas.DataFrame : DataFrame with new length column added
+    """
+    
+    if text_column not in df.columns:
+        print(f"Error: Column '{text_column}' not found in dataframe")
+        return df
+    
+    # Create copy to avoid modifying original
+    df_copy = df.copy()
+    
+    # Calculate text length, handling NaN/None values
+    df_copy[new_column_name] = df_copy[text_column].apply(
+        lambda x: len(str(x)) if pd.notna(x) else 0
+    )
+    
+    # Print summary statistics
+    total_rows = len(df_copy)
+    avg_length = df_copy[new_column_name].mean()
+    min_length = df_copy[new_column_name].min()
+    max_length = df_copy[new_column_name].max()
+    zero_length_count = (df_copy[new_column_name] == 0).sum()
+    
+    print(f"Created '{new_column_name}' column from '{text_column}':")
+    print(f"  Average length: {avg_length:.1f} characters")
+    print(f"  Min length: {min_length}")
+    print(f"  Max length: {max_length}")
+    print(f"  Rows with 0 length: {zero_length_count} ({zero_length_count/total_rows*100:.1f}%)")
+    
+    return df_copy
+
+# Simple usage function specifically for 'text' column
+def add_text_length_column(df):
+    """
+    Add a 'text_length' column to dataframe based on the 'text' column.
+    
+    Parameters:
+    -----------
+    df : pandas.DataFrame
+        Input dataframe with 'text' column
+    
+    Returns:
+    --------
+    pandas.DataFrame : DataFrame with 'text_length' column added
+    """
+    
+    return calculate_text_length(df, text_column='text', new_column_name='text_length')
 
 # 
 
