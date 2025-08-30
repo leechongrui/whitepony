@@ -1,6 +1,7 @@
 # ingest.py
 """
 - Download and store carlifornia reviews and business metadata datasets as dataframe
+- reason for choice of carlifornia = well balanced
 - drop irrelevant metadata columns: address, latitude, longitude, URL (address data covered by gmap_id)
 - filter review dataset rows where text is empty or non-english
 - Extract unique categories from the category column in the business metadata
@@ -228,7 +229,7 @@ def save_dataframe(df: pd.DataFrame, dest_path: str) -> None:
 if __name__ == "__main__":
     # load datasets ----- ADJUST MAX ROWS ACCORDINGLY
     metadata_df = load_json_gz(metadata_filepath)
-    review_df = load_json_gz(review_filepath, max_rows=10000000)
+    review_df = load_json_gz(review_filepath, max_rows=3000000)
 
     # drop irrelevant columns from metadata
     metadata_df = drop_columns(metadata_df, 
@@ -245,7 +246,7 @@ if __name__ == "__main__":
     merged_df = review_df.merge(metadata_df, on='gmap_id', how='inner', suffixes=('_review', '_metadata'))
 
     # stratified sampling ----- ADJUST SAMPLE SIZE PER CAT
-    sampled_df = stratified_sample_by_category(merged_df, sample_size=5000)
+    sampled_df = stratified_sample_by_category(merged_df, sample_size=2000)
 
     # save sampled df
     save_dataframe(sampled_df, r'C:\Users\Fabian\whitepony\data\interim\sampled_df.csv')
