@@ -4,7 +4,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from transformers import DistilBertTokenizerFast, DistilBertForSequenceClassification, Trainer, TrainingArguments
 import torch
-
+from model_dashboard import dashboard_report
 '''
 Hotel Model - Model Generation
 '''
@@ -54,7 +54,7 @@ model = DistilBertForSequenceClassification.from_pretrained(
 
 # Define training arguments
 training_args = TrainingArguments(
-	output_dir='./results',
+	output_dir='./output/checkpoints',
 	num_train_epochs=3,
 	per_device_train_batch_size=16,
 	per_device_eval_batch_size=32,
@@ -95,10 +95,11 @@ val_results_df = pd.DataFrame({
 })
 val_results_df['true_label'] = val_results_df['true_label'].map({0: 'truthful', 1: 'deceptive'})
 val_results_df['predicted_label'] = val_results_df['predicted_label'].map({0: 'truthful', 1: 'deceptive'})
-val_results_path = os.path.join(os.path.dirname(__file__), 'validation_predictions.csv')
+val_results_path = os.path.join(os.path.dirname(__file__), 'output/validation_predictions.csv')
 val_results_df.to_csv(val_results_path, index=False)
 print("Evaluation results:", eval_results)
 print(f"Validation predictions saved to {val_results_path}")
+dashboard_report(val_csv_path=val_results_path)
 
 ''' 
 Saving the model locally
